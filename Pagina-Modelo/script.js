@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
 
+
+
     function updateCarousel() {
         const offset = currentIndex * (itemWidth + itemGap);
         track.style.transform = `translateX(-${offset}px)`;
@@ -30,4 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         updateCarousel();
     });
+
+
 });
+
+
+function mostrarPesquisa() {
+    const inputElement = document.getElementById("searchInput");
+    const textoPesquisado = inputElement.value;
+
+    if (textoPesquisado.trim() !== "") {
+        alert("Você pesquisou: \"" + textoPesquisado + "\"");
+    } else {
+        alert("Por favor, digite algo para pesquisar.");
+    }
+
+    inputElement.value = "";
+}
